@@ -1,0 +1,22 @@
+clear all;clc;close all;
+epsilon=1
+delta=1e-5
+sens=3
+sz=[3,5,7]
+%高斯机制
+mech=AGMech(epsilon,delta);
+mech.setSens(sens)
+disp(mech);
+%生成噪声
+rn=mech.genNoise()
+%拉普拉斯机制
+mech=LapMech(epsilon);
+mech.setSens(sens);
+disp(mech);
+%生成噪声
+rn=mech.genNoise()
+%无噪声机制
+mech=NoNoiMech();
+disp(mech);
+%生成噪声
+rn=mech.genNoise(sz)
