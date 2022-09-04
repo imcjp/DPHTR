@@ -13,6 +13,24 @@
 % See the License for the specific language governing permissions and
 % limitations under the License.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Head
+% The script provides various differential privacy hierarchy tree release algorithms. They are
+%     Processless: No processing after adding noise.
+%     Boosting[1]: The classic optimally consistent release only for complete tree.
+%     PrivTrie: The optimally consistent release for any hierarchical tree in [2];
+%     GMC[3]:The optimally consistent release based on GM.
+%     ForcePos: Set the negative noise node to $0$ for non-negtive release.
+%     IPC: The general quadratic programming algorithm for optimally non-negtive consistent release by Interior Point Convex Method.
+%     GMNC[4]: The efficient optimally non-negtive consistent release based on GM, using Unconstrained Set Expansion Theorem to achieve extremely high-performance computing.
+% We provide three datasets. They are
+%     Census2010 from https://www2.census.gov/census_2010/
+%     Trip2013 from https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page
+%     SynData with Poisson distribution
+
+% [1] V. M. G. S. D. Hay, Michael; Rastogi, "Boosting the accuracy of differentially private histograms through consistency," Proceedings of the VLDB Endowment vol. 3 iss. 1-2, vol. 3, sep 2010.
+% [2] N. Wang, X. Xiao, Y. Yang, T. Hoang, H. Shin, J. Shin, and G. Yu, "Privtrie: Effective frequent term discovery under local differential privacy." IEEE, 04 2018.
+% [3] J. Cai, X. Liu, J. Li, and S. Zhang, "Generation matrix: An embeddable matrix representation for hierarchical trees," arXiv preprint, arXiv:2201.11297, 2022.
+% [4] J. Cai, X. Liu, J. Li, and K. Choo, "Differentially private non-negative consistent release for large-Scale hierarchical trees,".
 
 clear all;clc;close all;
 %% setup our core codes
@@ -23,7 +41,7 @@ algs={'Processless','Boosting','PrivTrie','GMC','ForcePos','IPC','GMNC'};
 alg=algs{7}; % Select a algorithm
 % Available datasets
 datasets={'Census2010','Trip2013','SynData'};
-dataset=datasets{2}; % Select a dataset
+dataset=datasets{1}; % Select a dataset
 seed=3020; % set a random seed
 % privacy parameters
 eplison=1;
@@ -36,9 +54,9 @@ alpha=1;
 q=100000; 
 %% parameters for data scale of datasets
 % for Census2010
-kOrder=1;
+kOrder=0;
 % for Trip2013
-timeLev=3;
+timeLev=2;
 % for SynData
 height=12;
 %% Load random seed
@@ -48,7 +66,7 @@ randn('seed',seed);
 noiMech=AGMech(eplison,delta);
 %% Load dataset and build a Hierarchical Tree
 if strcmp(dataset,datasets{1}) % for dataset Census2010
-    path='data/census2010.mat';
+    path='data/census2010.mat';       
     load(path);
     fn=census.data(:,2)+1;
     population=census.data(:,4);

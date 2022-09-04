@@ -30,9 +30,9 @@ classdef GMDPReleaser < DPReleaser
         
         function [vAvgPos,info] = nonNegConsistency(obj,noiVn)
             if length(obj.lambdan)>0
-                [vAvgPos,iter]=GMPC2(obj.tree,noiVn,obj.iLambdan);
+                [vAvgPos,iter]=GMNC2(obj.tree,noiVn,obj.iLambdan);
             else
-                [vAvgPos,iter]=GMPC(obj.tree,noiVn);
+                [vAvgPos,iter]=GMNC(obj.tree,noiVn);
             end
             dtV=vAvgPos-noiVn;
             val=sum(dtV.^2);

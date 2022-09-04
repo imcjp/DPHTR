@@ -62,8 +62,6 @@ classdef BoostingDPReleaser < DPReleaser
                 pgUp(obj,treeInfo,1);
                 pgDown(obj,treeInfo,1,0);                
                 vAvg=obj.tmpV;
-%                 vAvg2=recBoosting1(obj.tree.getChRep,noiVn)
-%                 norm(vAvg-vAvg2)
             end
             info=struct('fanOut',obj.tmpK);
         end

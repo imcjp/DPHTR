@@ -1,22 +1,12 @@
 clear all;clc;close all;
 posn=TreeGenProb([0,1,10,5])
-isShow=0;
 % 指定叶子节点数，构造一个随机的查询树
 [tree1,H] = buildQueryTree(20,posn);
-if isShow
-    showTree(tree1)
-end
 % 指定树的总节点数，构造一个随机的树结构
 tree2=buildRandTree(30,posn);
-if isShow
-    showTree(tree2)
-end
 % 根据树的父节点表示发构造一个树结构
 fn0=[0,1,1,2,2,3,3,3,4,4];
 tree3=buildTreebyFn(fn0);
-if isShow
-    showTree(tree3)
-end
 % 展示图的节点数，给出参数k得到k阶子树的节点数
 n=tree1.getN();
 k=3;
@@ -84,6 +74,3 @@ disp(chRep);
 % k阶子树
 k=3;
 subTree=tree1.getSubTree(k)
-if isShow
-    showTree(subTree)
-end

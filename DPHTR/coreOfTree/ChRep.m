@@ -1,6 +1,5 @@
 classdef ChRep < handle  
     %这是层次树的孩子节点表示
-    
     properties
         inds;
         chIds;

@@ -85,8 +85,6 @@ classdef PrivTrieDPReleaser < DPReleaser
                 pgUp2(obj,treeInfo,1);
                 pgDown(obj,treeInfo,1,0);
                 vAvg=obj.tmpV;
-%                 vAvg2=recPrivTrie(obj.tree.getChRep,noiVn);
-%                 norm(vAvg-vAvg2)
             end
         end
         

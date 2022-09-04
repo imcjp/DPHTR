@@ -99,43 +99,21 @@ classdef DPReleaser < handle
                 n=length(noiVn);
                 M=obj.tree.getCCMat();
                 M=spdiags(obj.iLambdan,0,n,n)*M;
-                isCvx=1
-                if isCvx
-                    cvx_begin
-                        variable vAvgPos(n)
-                        minimize (norm(vAvgPos-noiVn))
-                        M'*vAvgPos==0;
-                        vAvgPos >= 0;
-                    cvx_end
-                    iter=1;
-                else
-                end
-%                 options=optimset('Algorithm','interior-point-convex','Display','off');
-%                 n1=obj.tree.getN(1);
-%                 lb=zeros(obj.n,1);
-%                 lb(1:n1)=-inf;
-%                 [vAvgPos,~,~,info,~]=quadprog(speye(obj.n),-noiVn,[],[],M',zeros(n1,1),lb,[],[],options);
-%                 iter=info.iterations;
+                n1=obj.tree.getN(1);
+                lb=zeros(obj.n,1);
+                lb(1:n1)=-inf;
+                options=optimset('Algorithm','interior-point-convex','Display','off');
+                [vAvgPos,~,~,info,~]=quadprog(speye(obj.n),-noiVn,[],[],M',zeros(n1,1),lb,[],[],options);
+                iter=info.iterations;
             else
                 n=length(noiVn);
                 M=obj.tree.getCCMat();
-                isCvx=1
-                if isCvx
-                    cvx_begin
-                        variable vAvgPos(n)
-                        minimize (norm(vAvgPos-noiVn))
-                        M'*vAvgPos==0;
-                        vAvgPos >= 0;
-                    cvx_end
-                    iter=1;
-                else
-%                 options=optimset('Algorithm','interior-point-convex','Display','off');
-%                 n1=obj.tree.getN(1);
-%                 lb=zeros(obj.n,1);
-%                 lb(1:n1)=-inf;
-%                 [vAvgPos,~,~,info,~]=quadprog(speye(obj.n),-noiVn,[],[],M',zeros(n1,1),lb,[],[],options);
-%                 iter=info.iterations;
-                end
+                options=optimset('Algorithm','active-set','Display','off');
+                n1=obj.tree.getN(1);
+                lb=zeros(obj.n,1);
+                lb(1:n1)=-inf;
+                [vAvgPos,~,~,info,~]=quadprog(speye(obj.n),-noiVn,[],[],M',zeros(n1,1),lb,[],[],options);
+                iter=info.iterations;
             end
             dtV=vAvgPos-noiVn;
             val=sum(dtV.^2);
