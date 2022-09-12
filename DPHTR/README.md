@@ -15,10 +15,11 @@ GMNC: Our optimally non-negtive consistent release based on GM.
 4. **tools**: Some tools for our work.
 
 [Reference]
-[1] V. M. G. S. D. Hay, Michael; Rastogi, “Boosting the accuracy of differentially private histograms through consistency," Proceedings of the VLDB Endowment vol. 3 iss. 1-2, vol. 3, sep 2010.
 
-[2] N. Wang, X. Xiao, Y. Yang, T. Hoang, H. Shin, J. Shin, and G. Yu, “Privtrie: Effective frequent term discovery under local differential privacy." IEEE, 04 2018
+[1] V. M. G. S. D. Hay, Michael; Rastogi, "Boosting the accuracy of differentially private histograms through consistency," Proceedings of the VLDB Endowment vol. 3 iss. 1-2, vol. 3, sep 2010.
 
-[3] J. Cai, X. Liu, J. Li, and S. Zhang, “Generation matrix: An embeddable matrix representation for hierarchical trees," arXiv preprint arXiv:2201.11297, 2022
+[2] N. Wang, X. Xiao, Y. Yang, T. Hoang, H. Shin, J. Shin, and G. Yu, "Privtrie: Effective frequent term discovery under local differential privacy." IEEE, 04 2018
 
-[4] J. Dong, A. Roth, and W. J. Su, “Gaussian differential privacy," Journal of the Royal Statistical Society Series B, vol. 84, no. 1, pp. 3–37, 2022.
+[3] J. Cai, X. Liu, J. Li, and S. Zhang, "Generation matrix: An embedable matrix representation for hierarchical trees," arXiv preprint arXiv:2201.11297, 2022
+
+[4] J. Dong, A. Roth, and W. J. Su, "Gaussian differential privacy," Journal of the Royal Statistical Society Series B, vol. 84, no. 1, pp. 3–37, 2022.
