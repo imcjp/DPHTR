@@ -18,10 +18,15 @@ The software environment of the source code requires **MATLAB 2017**.
 If you have any questions or suggestions for improvement, please contact email jpingcai@163.com. Thank you!
 
 [Reference]
-[1] J. Cai, X. Liu, J. Li, and S. Zhang, “Generation matrix: An embeddable matrix representation for hierarchical trees,” arXiv preprint arXiv:2201.11297, 2022.
-[2] C. Dwork and A. Roth, “The algorithmic foundations of differential privacy,” vol. 9, pp. 211–407, 01 2014.
-[3] I. Mironov, “Renyi differential privacy,” 02 2017.
-[4] B. Balle and Y.-X. Wang, “Improving the gaussian mechanism for differential privacy: Analytical calibration and optimal denoising,” 05 2018.
-[5] S. Asoodeh, J. Liao, F. P. Calmon, O. Kosut, and L. Sankar, “A better bound gives a hundred rounds: Enhanced privacy guarantees via
-f-divergences,” in 2020 IEEE International Symposium on Information Theory (ISIT). IEEE, 2020, pp. 920–925.
-[6]  J. Dong, A. Roth, and W. J. Su, “Gaussian differential privacy,” Journal of the Royal Statistical Society Series B, vol. 84, no. 1, pp. 3–37, 2022.
+
+[1] J. Cai, X. Liu, J. Li, and S. Zhang, "Generation matrix: An embeddable matrix representation for hierarchical trees," arXiv preprint arXiv:2201.11297, 2022.
+
+[2] C. Dwork and A. Roth, “The algorithmic foundations of differential privacy," vol. 9, pp. 211–407, 01 2014.
+
+[3] I. Mironov, “Renyi differential privacy," 02 2017.
+
+[4] B. Balle and Y.-X. Wang, “Improving the gaussian mechanism for differential privacy: Analytical calibration and optimal denoising," 05 2018.
+
+[5] S. Asoodeh, J. Liao, F. P. Calmon, O. Kosut, and L. Sankar, “A better bound gives a hundred rounds: Enhanced privacy guarantees via f-divergences," in 2020 IEEE International Symposium on Information Theory (ISIT). IEEE, 2020, pp. 920–925.
+
+[6]  J. Dong, A. Roth, and W. J. Su, “Gaussian differential privacy," Journal of the Royal Statistical Society Series B, vol. 84, no. 1, pp. 3–37, 2022.
