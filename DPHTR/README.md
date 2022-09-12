@@ -2,7 +2,7 @@ The folder is the toolkit for differential privacy hierarchy tree release (DPHTR
 
 The main code structures are as follows:
 
-1. **coreOfTree**: We implemented the major functions related to hierarchical trees, including building hierarchical trees, applying Generation Matrix to process hierarchical trees, etc.
+1. **coreOfTree**: We implemented the major functions related to hierarchical trees, including building hierarchical trees, applying Generation Matrix to process hierarchical trees, etc. The codes in this folder are compiled to p-code.
 2. **dpRelease**: We have implemented multiple DPHTR algorithms for consistency release, as follows.
 Processless: No processing after adding noise.
 Boosting[1]: The classic optimally consistent release only for complete tree.
@@ -10,7 +10,8 @@ PrivTrie[2]: The optimally consistent release for any hierarchical tree in [2]
 GMC[3]: The optimally consistent release based on GM.
 ForcePos: Set the negative noise node to 0 for non-negtive release.
 IPC: The general quadratic programming algorithm for optimally non-negtive consistent release by Interior Point Convex Method.
-GMNC: Our optimally non-negtive consistent release based on GM.
+GMNC: Our optimally non-negtive consistent release based on GM. The code is compiled as p-code.
+
 3. **noiseMeches**: We implement Laplace mechanism and Gaussian mechanism to provide privacy protection, where the Gaussian mechanism is implemented with the theory of f-DP[4].
 4. **tools**: Some tools for our work.
 
