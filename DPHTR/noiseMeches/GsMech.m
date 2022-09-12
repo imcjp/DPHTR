@@ -1,39 +1,38 @@
-classdef AGMech < handle  
-    %分析高斯机制类
+classdef GsMech < handle  
+    % Gaussian Mechanism based on f-DP
     
     properties
         epsilon;
         delta;
-        sens=1;
-        sigma0;
+        sens=0;
         sigma;
     end
     
     methods(Static)
         function obj = withSigma(sigma0, varargin)
-            obj=AGMech(0,0);
+            obj=GsMech(0,0);
             if length(varargin)>0
                 obj.sens=varargin{1};
             end
             obj.epsilon=[];
             obj.delta=[];
-            obj.sigma0=sigma0;
-            obj.sigma=obj.sens*obj.sigma0;
+%             obj.sigma0=sigma0;
+            obj.sigma=sigma0;
         end
     end
     methods
-        function obj = AGMech(epsilon, delta, varargin)
+        function obj = GsMech(epsilon, delta, varargin)
             if length(varargin)>0
                 obj.sens=varargin{1};
             end
             obj.epsilon=epsilon;
             obj.delta=delta;
             if obj.epsilon==0
-                obj.sigma0=inf;
                 obj.sigma=inf;
             else
-                obj.sigma0=anaGaussSigma(obj.epsilon, obj.delta, 1);
-                obj.sigma=obj.sens*obj.sigma0;
+                if obj.sens>0
+                    obj.sigma=fDPGaussSigma(obj.epsilon,obj.delta,obj.sens);
+                end
             end
         end
         
@@ -56,19 +55,19 @@ classdef AGMech < handle
         
         function setSens(obj,sens)
             obj.sens=sens;
-            obj.sigma=sens*obj.sigma0;
+            obj.sigma=fDPGaussSigma(obj.epsilon,obj.delta,obj.sens);
         end
         
         function [res]=disp(obj)
             res='';
-            res=sprintf('%s高斯机制，支持L%i敏感度；\n',res,getSensType(obj));
+            res=sprintf('%sGaussian Mechanism with L%i sensitivity;\n',res,getSensType(obj));
             if length(obj.epsilon)==0
-                res=sprintf('%s\t噪声参数直接指定，单位噪声参数 sigma0 = %g，噪声参数 sigma = %g；\n',res,obj.sigma0,obj.sigma);
+                res=sprintf('%s\tNoise scale is specified directly, where sigma = %g;\n',res,obj.sigma);
             else
-                res=sprintf('%s\t满足(ε = %g,δ = %g) - 差分隐私，单位噪声参数 sigma0 = %g，噪声参数 sigma = %g；\n',res,obj.epsilon,obj.delta,obj.sigma0,obj.sigma);
+                res=sprintf('%s\tSatisfying (ε = %g,δ = %g) - DP, where sigma = %g;\n',res,obj.epsilon,obj.delta,obj.sigma);
             end
-            res=sprintf('%s\t敏感度设置为%g；\n',res,obj.sens);
-            res=sprintf('%s\t噪声方差为%g。\n',res,obj.getMse);
+            res=sprintf('%s\tSensitivity is set as %g;\n',res,obj.sens);
+            res=sprintf('%s\tThe noise variance is %g.\n',res,obj.getMse);
             disp(res)
         end
     end

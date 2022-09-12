@@ -39,7 +39,7 @@ timeLev=3;
 rand('seed',seed);
 randn('seed',seed);
 %% new a noise mechanism(analytical Gaussian Mechanism)
-noiMech=AGMech(eplison,delta);
+noiMech=GsMech(eplison,delta);
 %% Load dataset and build a Hierarchical Tree
 path='data/trip1.mat';
 u=load(path);
@@ -116,7 +116,7 @@ fprintf('\tThe used dataset is "%s" with %s.\n',dataset,dtInfo)
 m=tree.getN()-tree.getN(1);
 fprintf('\tThe hierarchical tree contains %i nodes and %i leaves.\n',n,m);
 fprintf('Differential Privacy Information:\n')
-fprintf('\tThe algorithm satisfies (%g, %g)-DP with Gaussian noise following N(0, %g) (under sensitivity 1).\n',eplison,delta,noiMech.sigma0)
+fprintf('\tThe algorithm satisfies (%g, %g)-DP with Gaussian noise following N(0, %g) (under sensitivity %g).\n',eplison,delta,noiMech.sigma,noiMech.sens)
 fprintf('The summary of experimental results:\n')
 fprintf('\tThe running time is %gs.\n',runtime);
 correctRmse=40.4423;

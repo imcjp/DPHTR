@@ -1,5 +1,5 @@
 classdef PrivTrieDPReleaser < DPReleaser  
-    %PrivTrie 发布方法
+    % DPHTR by PrivTrie, only support "consistency"
     
     properties
         tmpV;

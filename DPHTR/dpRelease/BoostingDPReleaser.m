@@ -1,6 +1,5 @@
 classdef BoostingDPReleaser < DPReleaser  
-    %Boosting 发布方法
-    
+    % DPHTR by Boosting, only support "consistency"
     properties
         tmpV;
         tmpW;

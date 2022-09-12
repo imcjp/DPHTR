@@ -4,7 +4,7 @@ delta=1e-5
 sens=3
 sz=[3,5,7]
 %高斯机制
-mech=AGMech(epsilon,delta);
+mech=GsMech(epsilon,delta);
 mech.setSens(sens)
 disp(mech);
 %生成噪声

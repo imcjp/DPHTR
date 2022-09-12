@@ -54,7 +54,7 @@ alpha=1;
 q=100000; 
 %% parameters for data scale of datasets
 % for Census2010
-kOrder=0;
+kOrder=3;
 % for Trip2013
 timeLev=2;
 % for SynData
@@ -63,7 +63,7 @@ height=12;
 rand('seed',seed);
 randn('seed',seed);
 %% Constructing a noise generator (analytical Gaussian Mechanism)
-noiMech=AGMech(eplison,delta);
+noiMech=GsMech(eplison,delta);
 %% Load dataset and build a Hierarchical Tree
 if strcmp(dataset,datasets{1}) % for dataset Census2010
     path='data/census2010.mat';       
@@ -230,7 +230,7 @@ fprintf('\tThe used dataset is "%s" with %s.\n',dataset,dtInfo)
 m=tree.getN()-tree.getN(1);
 fprintf('\tThe hierarchical tree contains %i nodes and %i leaves.\n',n,m);
 fprintf('Differential Privacy Information:\n')
-fprintf('\tThe algorithm satisfies (%g, %g)-DP with Gaussian noise following N(0, %g) (under sensitivity 1).\n',eplison,delta,noiMech.sigma0)
+fprintf('\tThe algorithm satisfies (%g, %g)-DP with Gaussian noise following N(0, %g) (under sensitivity %g).\n',eplison,delta,noiMech.sigma,noiMech.sens)
 fprintf('The summary of experimental results:\n')
 fprintf('\tThe running time is %gs.\n',runtime);
 fprintf('\tThe rmse is %g.\n',rmse);

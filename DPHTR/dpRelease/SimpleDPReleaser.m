@@ -1,5 +1,5 @@
 classdef SimpleDPReleaser < DPReleaser  
-    %分析高斯机制类
+    % DPHTR by Simple Mathods, Processless and ForcePositive
     
     properties
     end

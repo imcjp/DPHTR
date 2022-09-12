@@ -1,6 +1,6 @@
 classdef DPReleaser < handle  
-    %分析高斯机制类
-    
+    % DPHTR by Built-in Optimizer
+    % It's the ancestor class of other DPReleaser
     properties
         tree;
         noiMech;

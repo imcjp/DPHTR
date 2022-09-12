@@ -1,6 +1,6 @@
 clear all;clc;close all;
 isShow=0;
-% 根据树的父节点表示发构造一个树结构
+% 根据树的父节点表示法构造一个树结构
 fn0=[0,1,1,2,2,3,3,3,4,4];
 % fn0=[0,1];
 tree=buildTreebyFn(fn0);
@@ -10,15 +10,14 @@ end
 % 构造高斯机制
 epsilon=1
 delta=1e-5
-noiMech=AGMech(epsilon,delta);
-noiMech=LapMech(epsilon);
+noiMech=GsMech(epsilon,delta);
+% noiMech=LapMech(epsilon);
 disp(noiMech);
 % 给定非均匀隐私预算
 lambdan=rand(length(fn0),1);
 % 构造噪声数据
 releaser=DPReleaser(tree,noiMech,lambdan);
 xn=randn(releaser.m,1);
-% xn=ones(releaser1.m,1);
 vn=releaser.buildTree(xn);
 noiVn=releaser.addNoise(vn);
 % 简单的发布，仅支持非负性发布
