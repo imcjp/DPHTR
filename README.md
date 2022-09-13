@@ -15,8 +15,11 @@ The software environment of the source code requires **MATLAB 2017**.
 3. In folder "GSMeches", we implemented and compared various Gaussian Mechanisms, which are the classical Gaussian Mechanisms[2], RDP-based Gaussian Mechanisms[3], analytical Gaussian Mechanisms[4], enhanced RDP-based Gaussian Mechanisms[5], and Gaussian Mechanisms based on f-DP[6].
 4. Notably, since this work has not been formally published, we temporarily hide some parts of the core codes, including our proposed GMNC. The hidden code is compiled into p-code to provide experimentation and verification.
 5. The datasets are:
+
     Census2010 from https://www2.census.gov/census_2010/
+    
     Trip2013 from https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page
+    
     SynData with Poisson distribution
 
 If you have any questions or suggestions for improvement, please contact email jpingcai@163.com. Thank you!
