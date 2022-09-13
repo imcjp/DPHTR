@@ -4,8 +4,6 @@ We implemented and compared various Gaussian Mechanisms, which are the classical
 
 Please run **"compareGaussMechs.m"** for comparison. One of the results already obtained is
 
-<img src="https://github.com/imcjp/DPHTR/blob/main/GSMeches/compareResult.png" width="400"  alt="result"/><br/>
-
 ![image](https://github.com/imcjp/DPHTR/blob/main/GSMeches/compareResult.png)
 
 [Reference]
