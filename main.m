@@ -54,11 +54,11 @@ alpha=1;
 q=100000; 
 %% parameters for data scale of datasets
 % for Census2010
-kOrder=3;
+kOrder=0;
 % for Trip2013
-timeLev=2;
+timeLev=0;
 % for SynData
-height=12;
+height=20;
 %% Load random seed
 rand('seed',seed);
 randn('seed',seed);
