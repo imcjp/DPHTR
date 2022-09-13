@@ -3,6 +3,7 @@
 We implemented and compared various Gaussian Mechanisms, which are the classical Gaussian Mechanisms[1], RDP-based Gaussian Mechanisms[2], analytical Gaussian Mechanisms[3], enhanced RDP-based Gaussian Mechanisms[4], and Gaussian Mechanisms based on f-DP[5].
 
 Please run **"compareGaussMechs.m"** for comparison. One of the results already obtained is
+<img src="https://github.com/imcjp/DPHTR/blob/main/GSMeches/compareResult.png" width="200"  alt="result"/><br/>
 ![image](https://github.com/imcjp/DPHTR/blob/main/GSMeches/compareResult.png)
 
 [Reference]
