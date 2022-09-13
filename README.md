@@ -12,9 +12,9 @@ The software environment of the source code requires **MATLAB 2017**. Please exc
 
 #### Instructions:
 
-1. We developed a toolkit for differential privacy hierarchy tree release (DPHTR). The folder **"DPHTR"** is the toolkit and you can open it for more detail. Users can use it by adding the folder and its subfolders to the path of Matlab or using the Matlab code "addpath(genpath('DPHTR'));" to add the path.
+1. We developed a toolkit for differential privacy hierarchy tree release (DPHTR). The folder [**DPHTR**](https://github.com/imcjp/DPHTR/tree/main/DPHTR) is the toolkit and you can open it for more detail. Users can use it by adding the folder and its subfolders to the path of Matlab or using the Matlab code "addpath(genpath('DPHTR'));" to add the path.
 2. We provide the script **"main.m"** to help users quickly implement DPHTR using our code. In this script, we provide three datasets ('Census2010', 'Trip2013', 'SynData') and seven algorithm settings ('Processless', 'Boosting', 'PrivTrie', 'GMC', 'ForcePos', 'IPC', 'GMNC') as choices. Users can set parameters according to the script's comments such as dataset, algorithm and data size, privacy budget, etc.
-3. In folder **"GSMeches"** [GSMeches](https://github.com/imcjp/DPHTR/tree/main/GSMeches), we implemented and compared various Gaussian Mechanisms, which are the classical Gaussian Mechanisms[2], RDP-based Gaussian Mechanisms[3], analytical Gaussian Mechanisms[4], enhanced RDP-based Gaussian Mechanisms[5], and Gaussian Mechanisms based on f-DP[6].
+3. In folder [**GSMeches**](https://github.com/imcjp/DPHTR/tree/main/GSMeches), we implemented and compared various Gaussian Mechanisms, which are the classical Gaussian Mechanisms[2], RDP-based Gaussian Mechanisms[3], analytical Gaussian Mechanisms[4], enhanced RDP-based Gaussian Mechanisms[5], and Gaussian Mechanisms based on f-DP[6].
 4. The datasets are:
 
     Census2010 from https://www2.census.gov/census_2010/
