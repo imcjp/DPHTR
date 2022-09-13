@@ -2,19 +2,19 @@
 
 The project is the code for the paper **"Differentially Private Non-Negative Consistent Release for Large-Scale Hierarchical Trees"**. The authors are Jianping Cai, Ximeng Liu*, Jiayin Li and Kim-Kwang Raymond Choo.
 
-In this project, we design an efficient Generation Matrix-based optimally non-negative consistent release algorithm (GMNC), which can easily handle large-scale hierarchical trees with more than $100$ million nodes. The algorithm employs our proposed Generation Matrix[1] to find Unconstrained Set Expansion Theorem, thus achieving a great improvement in performance and dependability.
+In this project, we design an efficient Generation Matrix-based optimally non-negative consistent release algorithm (**GMNC**), which can easily handle large-scale hierarchical trees with more than $100$ million nodes. The algorithm employs our proposed Generation Matrix[1] to find Unconstrained Set Expansion Theorem, thus achieving a great improvement in performance and dependability.
 
 The software environment of the source code requires **MATLAB 2017**. Please excute **main.m** to start the project.
 
 **Note:** Since we adopt the real datasets of hierarchical trees with node scale up to 10 million, running the complete data requires sufficient memory, e.g. 32G. Otherwise, you can choose a smaller dataset to execute in our script.
+since this work has not been formally published, **we temporarily hide some parts of the core codes**, including our proposed GMNC. The hidden code is compiled into p-code to provide experimentation and verification.
 
 #### Instructions:
 
 1. We developed a toolkit for differential privacy hierarchy tree release (DPHTR). The folder **"DPHTR"** is the toolkit and you can open it for more detail. Users can use it by adding the folder and its subfolders to the path of Matlab or using the Matlab code "addpath(genpath('DPHTR'));" to add the path.
 2. We provide the script **"main.m"** to help users quickly implement DPHTR using our code. In this script, we provide three datasets ('Census2010', 'Trip2013', 'SynData') and seven algorithm settings ('Processless', 'Boosting', 'PrivTrie', 'GMC', 'ForcePos', 'IPC', 'GMNC') as choices. Users can set parameters according to the script's comments such as dataset, algorithm and data size, privacy budget, etc.
 3. In folder "GSMeches", we implemented and compared various Gaussian Mechanisms, which are the classical Gaussian Mechanisms[2], RDP-based Gaussian Mechanisms[3], analytical Gaussian Mechanisms[4], enhanced RDP-based Gaussian Mechanisms[5], and Gaussian Mechanisms based on f-DP[6].
-4. Notably, since this work has not been formally published, we temporarily hide some parts of the core codes, including our proposed GMNC. The hidden code is compiled into p-code to provide experimentation and verification.
-5. The datasets are:
+4. The datasets are:
 
     Census2010 from https://www2.census.gov/census_2010/
     
