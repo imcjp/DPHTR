@@ -8,7 +8,7 @@ The software environment of the source code requires **MATLAB 2017**. Please exc
 
 **Note:** 
 1. Since we adopt the real datasets of hierarchical trees with node scale up to 10 million, running the complete data requires sufficient memory, e.g. 32G. Otherwise, you can choose a smaller dataset to execute in our script.
-2. Since this work has not been formally published, **we temporarily hide some parts of the core codes**, including our proposed GMNC. The hidden code is compiled into **p-code** to provide experimentation and verification.
+2. Since this work has not been formally published, **we temporarily hide some parts of the core codes**, including our proposed GMNC. The hidden code is compiled into **executable p-code** to provide experimentation and verification.
 
 #### Instructions:
 
