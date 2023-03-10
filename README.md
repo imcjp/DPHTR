@@ -1,6 +1,6 @@
 # Code for Differentially Private Non-Negative Consistent Release for Large-Scale Hierarchical Trees
 
-The project is the code for the paper **"Differentially Private Non-Negative Consistent Release for Large-Scale Hierarchical Trees"**. The authors are Jianping Cai, Ximeng Liu*, Jiayin Li and Kim-Kwang Raymond Choo.
+The project is the code for the paper **"[Differentially Private Non-Negative Consistent Release for Large-Scale Hierarchical Trees](https://ieeexplore.ieee.org/document/10061543)"**. The authors are Jianping Cai, Ximeng Liu*, Jiayin Li and Kim-Kwang Raymond Choo.
 
 In this project, we design an efficient Generation Matrix-based optimally non-negative consistent release algorithm (**GMNC**), which can easily handle large-scale hierarchical trees with more than $100$ million nodes. The algorithm employs our proposed Generation Matrix[1] to find Unconstrained Set Expansion Theorem, thus achieving a great improvement in performance and dependability.
 
